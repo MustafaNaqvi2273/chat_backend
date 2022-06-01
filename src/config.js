@@ -1,9 +1,9 @@
 const dotenv = require('dotenv')
-const db_uri = process.env.MONGODB_URL;
 
-dotenv.config({ path: '../config.env' })
+dotenv.config()
 
 const SOCKET_PORT = 4000;
+const db_uri = process.env.MONGODB_URL;
 
 module.exports = {
     socket_port : SOCKET_PORT,
