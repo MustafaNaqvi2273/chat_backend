@@ -3,6 +3,7 @@ const express = require('express');
 const cors = require('cors')
 const http = require('http')
 const config = require('./src/config');
+const routes = require('./src/routes/index');
 const socket_settings = require('./src/socket/index');
 
 const app = express()
@@ -10,6 +11,7 @@ const app = express()
 const server = http.createServer(app)
 
 app.use(cors())
+app.use(routes)
 
 console.log('config', config)
 

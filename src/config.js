@@ -10,7 +10,6 @@ module.exports = {
     mongodb : {
         url: db_uri,
         options: {
-            useCreateIndex: true,
             useNewUrlParser: true,
             useUnifiedTopology: true,
         }

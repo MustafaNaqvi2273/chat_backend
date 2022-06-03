@@ -3,6 +3,7 @@ const _ = require('lodash');
 const { pick } = require('lodash');
 
 export const validateSchema = (schema) => (req, res, next) => {
+    console.log('here')
 
     const objectToValidate = pick(req, ['params', 'query', 'body']);
     const { error, value } = joi.validate(objectToValidate, schema);

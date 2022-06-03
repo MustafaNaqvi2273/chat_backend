@@ -22,8 +22,10 @@ export const register = async(req, res) => {
         }
         const new_user = {...req.body}
         new_user.password_hash = bcrypt.hashSync(req.body.password, 10);
-        const new_user = await userService.createUser(req.body)
-        const token = await generateNewToken(new_user)
+        console.log('new user', new_user)
+        const _user = await userService.createUser(req.body)
+        const token = await generateNewToken(_user)
+        console.log('token', token)
         new_user.token = token;
         return res.status(200).send({ data: new_user, message: 'User Registered!' })
     }
